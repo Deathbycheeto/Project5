@@ -44,14 +44,21 @@
 #product img {
     height: 600px;
 }
-.cart_item {
+.cartItem {
+    height: 300px;
+    width: 50vw;
+    min-width: 300px; 
     text-align: center;
 }
-.cart_item img {
+.cartItem img {
     height: 100px;
     width: 100px;
 }
 
 .order_confirm {
     text-align: center;
+}
+
+#emptyCart {
+    
 }
