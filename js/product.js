@@ -13,8 +13,8 @@ const displaySingleProduct = (id) => {
                     value /= 100;
                     var price = value.toString() + ".00";
                     content +=`<div class="item">
+                    <h1>${Teddy.name}</h1>
                     <img src="${Teddy.imageUrl}">
-                    <h3>Name: ${Teddy.name}</h3>
                     <h3>Price: $${price}</h3>
                     <h3>Description: ${Teddy.description}</h3>`;
                     Teddy.colors.forEach(x => {

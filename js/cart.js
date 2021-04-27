@@ -1,7 +1,7 @@
 const LoadCart = () => {
     let products = JSON.parse(localStorage.getItem("productsInCart"));
     let content = "";
-    if (products == "") {
+    if (products == "" || products == undefined) {
         alert("Empty Cart");
         content += `<div id="emptyCart">
         <h2>There are no items in your cart</h2>
@@ -65,4 +65,48 @@ const subQuantity = (productID) => {
     } 
     LoadCart();
     cartTotal();
+}
+let submitBtn = document.getElementById("submit");
+submitBtn.addEventListener("click",(e) => {
+    e.preventDefault();
+    postOrder();
+})
+const postOrder = () =>{
+    
+    let contact = {
+        firstName:document.getElementById("fname").value,
+        lastName:document.getElementById("lname").value,
+        email:document.getElementById("email").value,
+        address:document.getElementById("address").value,
+        city:document.getElementById("city").value
+    }
+    if (contact.firstName != "" && contact.lastName != "" && contact.email != "" && contact.address != "" && contact.city != "") {
+
+    let products = JSON.parse(localStorage.getItem("productsInCart"));
+    let productIDs = []
+    products.forEach((p)=>{
+        productIDs.push(p._id)
+        
+    }) 
+    console.log(productIDs)
+    let url = "http://localhost:3000/api/teddies/order";
+    let xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+        if (this.status >= 200) {
+            let response = xhttp.responseText;
+            console.log(JSON.parse(response).orderId);
+            window.location.href="confirmation.html?orderId="+JSON.parse(response).orderId+"&total="+document.getElementById("total").innerHTML;   
+        }
+    }    
+
+    xhttp.open("POST", url , true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send(JSON.stringify({
+        contact:contact,
+        products:productIDs
+
+    }));
+}else{
+    alert("All fields are required");
+}
 }

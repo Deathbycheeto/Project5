@@ -2,10 +2,12 @@
     background-color: #3b3547;
     color: white;
     height: 10vh;
+    min-height: 100px;
 }
-.site_top h3 {
-    font-size: 2em;
-    display: inline;
+
+.site_top img {
+    height: 10vh;
+    min-height: 100px;
 }
 .site_top a {
     vertical-align: middle;
@@ -25,10 +27,12 @@
 .item_selection a {
     text-decoration: none;
     color:black;
+    margin: 10px, auto;
 }
 .item {
+    text-align: center;
     width: 30vw;
-    border:2px solid black;
+    /* border:2px solid black; */
 }
 .item img {
     display: block;
@@ -39,16 +43,54 @@
 #product {
     margin: 0vw 1vw;
     width: 95vw;
-    border:2px solid black;
+    
+}
+#product h1 {
+    font-size: 3em;
+    text-align: center;
+}
+#product .item {
+    margin:auto;
+    text-align: left;
 }
 #product img {
-    height: 600px;
+    height: auto;
+}
+#button-div {
+    text-align: center;
+    margin: 0vw 1vw;
+    width: 95vw;
+}
+.flex-container {
+    display: flex;
+    flex: 3;
+    margin: 0vw 1vw;
+    width: 95vw;
+}
+.flex-container #div1 {
+    width: 50vw;
+    margin: auto;
+}
+.flex-container #div2 {
+    width: 40vw;
+    margin: auto;
+}
+#orderForm input{
+    width:400px;
+    min-width: 25vw;
+}
+#orderForm label {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 .cartItem {
-    height: 300px;
+    text-align: left;
+    height: 225px;
     width: 50vw;
-    min-width: 300px; 
-    text-align: center;
+    min-width: 300px;     
+}
+.cartItem h3 {
+    margin:2px
 }
 .cartItem img {
     height: 100px;
@@ -57,6 +99,11 @@
 
 .order_confirm {
     text-align: center;
+}
+#total {
+    font-size: 4em;
+    font-weight: bold;
+    text-align: left;
 }
 
 #emptyCart {

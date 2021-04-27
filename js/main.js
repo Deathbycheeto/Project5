@@ -28,35 +28,3 @@ const loadProducts = () => {
  }
 
 loadProducts();
-
-
-
-// const addToCart = (product) => {
-
-// }
-
-// addToCart(product);
-
-// const displayCart = () => {
-
-// }
-
-// displayCart();
-
-// const removeFromCart = (product) => {
-
-// }
-
-// removeFromCart(product);
-
-// const makeOrder = () => {
-
-// }
-
-// makeOrder();
-
-// const UpdateCartNumber = (type, qty) => {
-
-// }
-
-// UpdateCartNumber(type, qty);
